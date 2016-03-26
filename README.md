@@ -4,8 +4,8 @@ CastCompanionLibrary-android is a library project to enable developers integrate
 
 ## Dependencies
 * google-play-services_lib library from the Android SDK (at least version 8.3+)
-* android-support-v7-appcompat (version 23.2.0 or above)
-* android-support-v7-mediarouter (version 23.2.0 or above)
+* android-support-v7-appcompat (version 23.2.1 or above)
+* android-support-v7-mediarouter (version 23.2.1 or above)
 
 ## Set up Instructions
 Set up the project dependencies. To use this library in your project, you have two options:
@@ -15,7 +15,7 @@ dependencies:
 ```shell
  dependencies {
     ...
-    compile 'com.google.android.libraries.cast.companionlibrary:ccl:2.8.2'
+    compile 'com.google.android.libraries.cast.companionlibrary:ccl:2.8.3'
  }
 ```
 
@@ -63,16 +63,23 @@ Google Cast Developers Community on Google+ [http://goo.gl/TPLDxj](http://goo.gl
 
 ## Change List
 
-2.8.2
+2.8.3 (available here and also from jCenter)
+
+ * Updated support libraries to version 23.2.1, this addresses the crash issue on KitKat when IntroductoryOverlay is used (see issue #278)
+ * Fixing an issue where InputStreams were not properly closed in FetchBitmapTask (credit goes to David Edwards)
+ * Fixing an issue where failure to load a media in a queue was not closing the full screen VideoCastControllerActivity (credit goes to Luzian Wild)
+ * Correcting some typos
+
+2.8.2 (available here and also from jCenter)
 
  * BACKWARD INCOMPATIBLE CHANGE: Removed Simple Widgets that were introduced in 2.8.0
  * Updated support libraries to version 23.2.0
 
-2.8.1
+2.8.1 (available here and also from jCenter)
 
  * Fixed issue #274
 
-2.8.0
+2.8.0 (available here and also from jCenter)
 
  * CCL is now available from jCenter
  * Introduced a collection of Simple Widgets: a number of cast-aware widgets that can be used with
