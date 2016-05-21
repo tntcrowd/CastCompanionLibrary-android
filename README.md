@@ -4,8 +4,8 @@ CastCompanionLibrary-android is a library project to enable developers integrate
 
 ## Dependencies
 * google-play-services_lib library from the Android SDK (at least version 8.3+)
-* android-support-v7-appcompat (version 23.2.1 or above)
-* android-support-v7-mediarouter (version 23.2.1 or above)
+* android-support-v7-appcompat (version 23.4.0 or above)
+* android-support-v7-mediarouter (version 23.4.0 or above)
 
 ## Set up Instructions
 Set up the project dependencies. To use this library in your project, you have two options:
@@ -15,7 +15,7 @@ dependencies:
 ```shell
  dependencies {
     ...
-    compile 'com.google.android.libraries.cast.companionlibrary:ccl:2.8.3'
+    compile 'com.google.android.libraries.cast.companionlibrary:ccl:2.8.4'
  }
 ```
 
@@ -62,6 +62,11 @@ Your use of this sample is subject to, and by using or downloading the sample fi
 Google Cast Developers Community on Google+ [http://goo.gl/TPLDxj](http://goo.gl/TPLDxj)
 
 ## Change List
+
+2.8.4 (bug fix release)
+
+ * Addressed the following issues: #287, #294, #298, #301, #309
+ * Enabling debug through CastConfiguration now enables logging through LogUtils as well.
 
 2.8.3 (available here and also from jCenter)
 

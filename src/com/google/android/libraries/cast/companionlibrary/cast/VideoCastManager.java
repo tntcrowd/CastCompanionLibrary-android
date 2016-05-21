@@ -1840,12 +1840,10 @@ public class VideoCastManager extends BaseCastManager
 
                         @Override
                         public void onQueueStatusUpdated() {
-                            LOGD(TAG,
-                                    "RemoteMediaPlayer::onQueueStatusUpdated() is "
-                                            + "reached");
-                            mMediaStatus = mRemoteMediaPlayer.getMediaStatus();
-                            if (mMediaStatus != null
-                                    && mMediaStatus.getQueueItems() != null) {
+                            LOGD(TAG, "RemoteMediaPlayer::onQueueStatusUpdated() is reached");
+                            mMediaStatus = mRemoteMediaPlayer != null ? mRemoteMediaPlayer
+                                    .getMediaStatus() : null;
+                            if (mMediaStatus != null && mMediaStatus.getQueueItems() != null) {
                                 List<MediaQueueItem> queueItems = mMediaStatus
                                         .getQueueItems();
                                 int itemId = mMediaStatus.getCurrentItemId();
@@ -2134,7 +2132,8 @@ public class VideoCastManager extends BaseCastManager
 
     private void onRemoteMediaPreloadStatusUpdated() {
         MediaQueueItem item = null;
-        mMediaStatus = mRemoteMediaPlayer.getMediaStatus();
+        mMediaStatus = mRemoteMediaPlayer != null ? mRemoteMediaPlayer
+                                    .getMediaStatus() : null;
         if (mMediaStatus != null) {
             item = mMediaStatus.getQueueItemById(mMediaStatus.getPreloadedItemId());
         }
@@ -2340,7 +2339,7 @@ public class VideoCastManager extends BaseCastManager
             mLockScreenFetchTask = new FetchBitmapTask(screenSize.x, screenSize.y, false) {
                 @Override
                 protected void onPostExecute(Bitmap bitmap) {
-                    if (mMediaSessionCompat != null) {
+                    if (bitmap != null && mMediaSessionCompat != null) {
                         MediaMetadataCompat currentMetadata = mMediaSessionCompat.getController()
                                 .getMetadata();
                         MediaMetadataCompat.Builder newBuilder = currentMetadata == null
@@ -2441,7 +2440,7 @@ public class VideoCastManager extends BaseCastManager
                 mMediaSessionIconFetchTask = new FetchBitmapTask() {
                     @Override
                     protected void onPostExecute(Bitmap bitmap) {
-                        if (mMediaSessionCompat != null) {
+                        if (bitmap != null && mMediaSessionCompat != null) {
                             MediaMetadataCompat currentMetadata = mMediaSessionCompat
                                     .getController().getMetadata();
                             MediaMetadataCompat.Builder newBuilder = currentMetadata == null
