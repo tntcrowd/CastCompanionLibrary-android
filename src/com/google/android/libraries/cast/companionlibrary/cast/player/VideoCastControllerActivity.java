@@ -27,12 +27,14 @@ import com.google.android.libraries.cast.companionlibrary.cast.VideoCastManager;
 import com.google.android.libraries.cast.companionlibrary.cast.exceptions.NoConnectionException;
 import com.google.android.libraries.cast.companionlibrary.cast.exceptions
         .TransientNetworkDisconnectionException;
+import com.google.android.libraries.cast.companionlibrary.cast.tracks.CaptionsPreferenceActivity;
 import com.google.android.libraries.cast.companionlibrary.cast.tracks.ui.TracksChooserDialog;
 import com.google.android.libraries.cast.companionlibrary.utils.LogUtils;
 import com.google.android.libraries.cast.companionlibrary.utils.Utils;
 import com.google.android.libraries.cast.companionlibrary.widgets.MiniController;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -148,6 +150,8 @@ public class VideoCastControllerActivity extends AppCompatActivity implements
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();
+        } else if(item.getItemId() == R.id.action_captions_setting){
+            startActivity(new Intent(VideoCastControllerActivity.this, CaptionsPreferenceActivity.class));
         }
         return true;
     }

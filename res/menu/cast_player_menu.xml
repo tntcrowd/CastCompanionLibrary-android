@@ -23,4 +23,9 @@
         app:actionProviderClass="android.support.v7.app.MediaRouteActionProvider"
         app:showAsAction="always"/>
 
+    <item
+        android:id="@+id/action_captions_setting"
+        android:title="자막"
+        app:showAsAction="never"/>
+
 </menu>

@@ -46,7 +46,7 @@
     <string name="ccl_prefs_caption_text_opacity_value_default">FF</string>
     <string name="ccl_prefs_caption_edge_type_value_default">EDGE_TYPE_NONE</string>
     <string name="ccl_prefs_caption_background_color_value_default">#000000</string>
-    <string name="ccl_prefs_caption_background_opacity_value_default">FF</string>
+    <string name="ccl_prefs_caption_background_opacity_value_default">80</string>
     <string name="ccl_pick_tracks">Tracks</string>
 
     <string name="ccl_caption_subtitles">Subtitles</string>

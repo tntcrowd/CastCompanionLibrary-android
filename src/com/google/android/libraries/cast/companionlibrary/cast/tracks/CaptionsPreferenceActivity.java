@@ -49,7 +49,7 @@ public class CaptionsPreferenceActivity extends PreferenceActivity {
             return;
         }
         if (Utils.IS_KITKAT_OR_ABOVE) {
-            startActivity(new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS));
+            startActivity(new Intent(Settings.ACTION_CAPTIONING_SETTINGS));
             finish();
             return;
         }
